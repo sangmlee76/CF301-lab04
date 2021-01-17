@@ -7,37 +7,100 @@
 /************************* Overall ***************************/
 /*************************************************************/
 
-/* Not exactly clear on why this is not rendering properly as a grid layout.  I can see the grid but am not able to change each div box within the grid */
-
-header{
-  border: solid 1px black;
-  text-align: center;
-}
-
-div{
-  border: solid 1px black;
-  text-align: center;
-}
+/* Parent properties */
 
 body{
   display: grid;
+  height: 100vh;
+  justify-content: center;
+}
+div{
+  border: solid 1px black;
+  text-align: center;
+  justify-content: center;
+  align-content: center;
+  /* align-items: center; */
+  /* I can't figure out how to center the box label vertically */
+}
+
+.container{
+  display: grid;
   grid-template-columns: 240px 240px;
   grid-template-rows: 75px 150px 125px 125px 250px 250px 250px 250px 80px;
-  /* height: 100vh; */
-  justify-content: center;
-
 }
 
-#block-a{
-  grid-area: header;
+/* Children properties */
+
+#block-a {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 1;
+  grid-row-end: 2;
 }
+
+#block-b {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 2;
+  grid-row-end: 3;
+}
+
+#block-c {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 3;
+  grid-row-end: 4;
+}
+
+#block-d {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 4;
+  grid-row-end: 5;
+}
+
+#block-e {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 5;
+  grid-row-end: 6;
+}
+
+#block-f {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 5;
+  grid-row-end: 6;
+}
+
+#block-g {
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 6;
+  grid-row-end: 7;
+}
+
+#block-h {
+  grid-column-start: 2;
+  grid-column-end: 3;
+  grid-row-start: 6;
+  grid-row-end: 7;
+}
+
+#block-i {
+  grid-column-start: 1;
+  grid-column-end: 3;
+  grid-row-start: 7;
+  grid-row-end: 8;
+}
+
 
 /*************************************************************/
 /********************** Media Queries ************************/
 /*************************************************************/
 
 @media screen and (max-width: 600px) {
-  header{
+  div#block-a{
     background-color: rgb(94, 192, 192);
   }
   
@@ -77,7 +140,7 @@ body{
 
 /* Sets the color of the blocks for tablet screens */
 @media screen and (min-width: 601px) and (max-width: 768px) {
-  header{
+  div#block-a{
     background-color: pink;
   }
   
@@ -120,7 +183,7 @@ body{
   /* Set the new block colors */
   
    
-  header{
+  div#block-a{
     background-color: royalblue;
     height: 100px;
     width: 100%;
